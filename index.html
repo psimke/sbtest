@@ -81,11 +81,11 @@ main div {
 </style>
 
   <script>
-    const appHeight = () => {
+    function appHeight() {
         document.getElementsByTagName('html')[0].style.height = window.innerHeight + "px";
         document.getElementsByTagName('body')[0].style.height = window.innerHeight + "px";
     }
-    window.addEventListener('resize', appHeight)
+    window.addEventListener('resize', appHeight);
     appHeight();
   </script>
   
