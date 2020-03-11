@@ -80,13 +80,7 @@ main div {
     
 </style>
 
-  <script>
-    function appHeight() {
-        document.getElementsByTagName('html')[0].style.height = window.innerHeight + "px";
-        document.getElementsByTagName('body')[0].style.height = window.innerHeight + "px";
-    }
-    window.addEventListener('resize', appHeight);
-  </script>
+  
   
 </head>
 <body>
@@ -120,5 +114,20 @@ main div {
     <input id="inputBox" type="text"/>   
   </footer>
   </div>
+
+<script>
+    function appHeight() {
+        document.getElementsByTagName('html')[0].style.height = window.innerHeight + "px";
+        document.getElementsByTagName('body')[0].style.height = window.innerHeight + "px";
+    }
+    window.addEventListener('resize', appHeight);
+
+
+    function preventTouch(e) {
+        e.preventDefault();
+    }
+    document.getElementsByTagName('header')[0].addEventListener('touchstart', preventTouch);
+    document.getElementsByTagName('footer')[0].addEventListener('touchstart', preventTouch);
+  </script>
 </body>
 </html>
