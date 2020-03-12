@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
   <title>IOS SCROLL</title>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-polyfills/0.1.42/polyfill.min.js" integrity="sha256-/XfEHUGimdIk42Vy7oTnNLtT8sVrO6vnhhnsQT1W1oo=" crossorigin="anonymous"></script>
   <style>
   html, body {
     position: fixed;
@@ -87,7 +87,7 @@ main div {
     Fixed Header
   </header>
   <main>
-    <div>
+    <div id="scrollable">
       
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -117,6 +117,7 @@ main div {
 
 <script>
     var _timeoutSet;
+    var _initialViewPort = window.visualViewport.height;
     function timeoutRun() {
         window.scrollTo(0,0);
         document.body.scrollTo(0,0);
@@ -138,10 +139,20 @@ main div {
         }
     }
 
-  
+var bubbleStop = function(e) {
+  // If you need polyfill for .closest(), see: https://stackoverflow.com/a/35294561/395910
+  // Example of a parentSelector
+  var parentSelector = '#scrollable';
+  if(e.target.closest(parentSelector))
+    e.preventDefault();
+});
     window.onload = function() {
-      document.addEventListener('touchend',appHeight);
+//       document.addEventListener('touchend',appHeight);
       window.addEventListener('resize', appHeight);
+      document.addEventListener('touchstart', bubbleStop, false);
+      document.addEventListener('touchmove', bubbleStop, false);
+      document.addEventListener('touchend', bubbleStop, false);
+
     }
   </script>
 </body>
