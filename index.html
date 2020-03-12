@@ -129,6 +129,8 @@ main div {
         document.getElementsByTagName('body')[0].style.height = window.visualViewport.height + "px";
     }
     function appHeight() {
+        window.scrollTo(0,0);
+        document.body.scrollTo(0,0);
         if (_timeoutSet) { clearTimeout(_timeoutSet); }
 
         _timeoutSet = setTimeout(timeoutRun, 320);
@@ -138,6 +140,7 @@ main div {
 
     function preventScroll(e) {
         e.preventDefault();
+        e.stopPropagation();
     }
   
     function stopPropagation(e) {
