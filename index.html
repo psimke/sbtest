@@ -141,21 +141,14 @@ main div {
         }
     }
 
-var bubbleStop = function(e) {
-  // If you need polyfill for .closest(), see: https://stackoverflow.com/a/35294561/395910
-  // Example of a parentSelector
-  var parentSelector = 'body';
-  if(e.target.closest(parentSelector))
-    e.preventDefault();
-};
     window.onload = function() {
-//       document.addEventListener('touchend',appHeight);
-      
+      document.addEventListener('touchend',appHeight);
+      document.addEventListener('keyup', appHeight);
       
       window.addEventListener('resize', appHeight);
-      document.addEventListener('touchstart', bubbleStop, {passive: false});
-      document.addEventListener('touchmove', bubbleStop, {passive: false});
-      document.addEventListener('touchend', bubbleStop, {passive: false});
+//       document.addEventListener('touchstart', bubbleStop, {passive: false});
+//       document.addEventListener('touchmove', bubbleStop, {passive: false});
+//       document.addEventListener('touchend', bubbleStop, {passive: false});
 
     }
   </script>
