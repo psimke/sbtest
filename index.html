@@ -90,7 +90,7 @@ main div {
   </header>
   <main>
     <div>
-      <h2></h2>
+      
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
@@ -113,12 +113,13 @@ main div {
   </main>
   <footer>
     <input id="inputBox" type="text"/>   
+    <span id="spanStats"></span>
   </footer>
   </div>
 
 <script>
     function appHeight() {
-        document.getElementsByTagName('footer')[0].innerHTML = window.innerHeight + ' || ' + window.visualViewport.height;
+        document.getElementById('spanStats').innerHTML = window.innerHeight + ' || ' + window.visualViewport.height;
         document.getElementsByTagName('html')[0].style.height = window.innerHeight + "px";
         document.getElementsByTagName('body')[0].style.height = window.innerHeight + "px";
     }
