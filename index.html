@@ -139,6 +139,8 @@ main div {
     }
 
     function preventScroll(e) {
+        window.scrollTo(0,0);
+        document.body.scrollTo(0,0);
         e.preventDefault();
         e.stopPropagation();
     }
