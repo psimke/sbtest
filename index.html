@@ -116,12 +116,18 @@ main div {
   </div>
 
 <script>
-    function appHeight() {
+    var _timeoutSet;
+    function timeoutRun() {
         window.scrollTo(0,0);
         document.body.scrollTo(0,0);
         document.getElementById('spanStats').innerHTML = window.innerHeight + ' || ' + window.visualViewport.height;
         document.getElementsByTagName('html')[0].style.height = window.visualViewport.height + "px";
         document.getElementsByTagName('body')[0].style.height = window.visualViewport.height + "px";
+    }
+    function appHeight() {
+        if (_timeoutSet) { clearTimeout(_timeoutSet); }
+
+        _timeoutSet = setTimeout(timeoutRun, 320);
 //         document.getElementsByTagName('html')[0].style.bottom = 0;
 //         document.getElementsByTagName('body')[0].style.bottom = 0;
     }
