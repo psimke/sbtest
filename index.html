@@ -151,9 +151,9 @@ var bubbleStop = function(e) {
       
       
       window.addEventListener('resize', appHeight);
-      document.addEventListener('touchend', bubbleStop, false);
-      document.addEventListener('touchmove', bubbleStop, false);
-      document.addEventListener('touchend', bubbleStop, false);
+      document.addEventListener('touchend', bubbleStop, {passive: false});
+      document.addEventListener('touchmove', bubbleStop, {passive: false});
+      document.addEventListener('touchend', bubbleStop, {passive: false});
 
     }
   </script>
