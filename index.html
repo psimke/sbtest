@@ -89,8 +89,8 @@ main div {
   <header>
     Fixed Header
   </header>
-  <main id="scrollable">
-    <div >
+  <main >
+    <div id="scrollable">
       
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -136,12 +136,14 @@ main div {
 //         document.getElementsByTagName('body')[0].style.bottom = 0;
     }
 
-    function preventTouch(e) {
-        if(e.target.tagName !== "INPUT") {
-           e.preventDefault();
-        }
+    function preventScroll(e) {
+        e.preventDefault();
     }
-
+  
+    function stopPropagation(e) {
+        e.stopPropagation();
+    }
+  
     window.onload = function() {
       document.addEventListener('touchend',appHeight);
       document.addEventListener('keyup', appHeight);
@@ -150,8 +152,9 @@ main div {
       
       document.getElementById('inputBox').addEventListener('blur', appHeight);
       
-      
-      
+      document.body.addEventListener("touchmove", preventScroll);
+      document.getElementById('scrollable').addEventListener('touchmove', stopPropagation);
+
       appHeight();
 //       document.addEventListener('touchstart', bubbleStop, {passive: false});
 //       document.addEventListener('touchmove', bubbleStop, {passive: false});
