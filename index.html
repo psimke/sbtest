@@ -123,8 +123,8 @@ main div {
         window.scrollTo(0,0);
         document.body.scrollTo(0,0);
         document.getElementById('spanStats').innerHTML = window.innerHeight + ' || ' + window.visualViewport.height;
-        document.getElementsByTagName('html')[0].style.height = window.innerHeight + "px";
-        document.getElementsByTagName('body')[0].style.height = window.innerHeight + "px";
+        document.getElementsByTagName('html')[0].style.height = window.visualViewport.height + "px";
+        document.getElementsByTagName('body')[0].style.height = window.visualViewport.height + "px";
 //         document.getElementsByTagName('html')[0].style.bottom = 0;
 //         document.getElementsByTagName('body')[0].style.bottom = 0;
     }
