@@ -122,10 +122,7 @@ main div {
         document.getElementsByTagName('html')[0].style.height = window.innerHeight + "px";
         document.getElementsByTagName('body')[0].style.height = window.innerHeight + "px";
     }
-    document.addEventListener('resize',appHeight);
-
-    window.addEventListener('scroll', function(e) {e.preventDefault()});
-    document.addEventListener('scroll', function(e) {e.preventDefault()});
+   
 
 
     function preventTouch(e) {
@@ -133,8 +130,16 @@ main div {
            e.preventDefault();
         }
     }
-    document.getElementsByTagName('header')[0].addEventListener('touchstart', preventTouch);
-    document.getElementsByTagName('footer')[0].addEventListener('touchstart', preventTouch);
+   
+
+    window.onload = function() {
+      document.addEventListener('resize',appHeight);
+
+       window.addEventListener('scroll', function(e) {e.preventDefault()});
+        document.addEventListener('scroll', function(e) {e.preventDefault()});
+        document.getElementsByTagName('header')[0].addEventListener('touchstart', preventTouch);
+        document.getElementsByTagName('footer')[0].addEventListener('touchstart', preventTouch);
+    }
   </script>
 </body>
 </html>
