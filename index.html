@@ -125,7 +125,7 @@ main div {
 
     function preventTouch(e) {
         if(e.target.tagName !== "INPUT") {
-          e.preventDefault();
+           e.preventDefault();
         }
     }
     document.getElementsByTagName('header')[0].addEventListener('touchstart', preventTouch);
