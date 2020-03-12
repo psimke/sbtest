@@ -152,7 +152,7 @@ main div {
       
       document.getElementById('inputBox').addEventListener('blur', appHeight);
       
-      document.body.addEventListener("touchmove", preventScroll);
+      document.body.addEventListener("touchmove", preventScroll, {passive: false});
       document.getElementById('scrollable').addEventListener('touchmove', stopPropagation);
 
       appHeight();
