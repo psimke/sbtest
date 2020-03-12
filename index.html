@@ -122,7 +122,10 @@ main div {
         document.getElementsByTagName('html')[0].style.height = window.innerHeight + "px";
         document.getElementsByTagName('body')[0].style.height = window.innerHeight + "px";
     }
-    window.addEventListener('resize', appHeight);
+    document.addEventListener('resize',appHeight);
+
+    window.addEventListener('scroll', function(e) {e.preventDefault()});
+    document.addEventListener('scroll', function(e) {e.preventDefault()});
 
 
     function preventTouch(e) {
