@@ -124,7 +124,9 @@ main div {
 
 
     function preventTouch(e) {
-        e.preventDefault();
+        if(e.target.tagName !== "INPUT") {
+          e.preventDefault();
+        }
     }
     document.getElementsByTagName('header')[0].addEventListener('touchstart', preventTouch);
     document.getElementsByTagName('footer')[0].addEventListener('touchstart', preventTouch);
