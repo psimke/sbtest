@@ -159,7 +159,7 @@ main div {
       
       document.body.addEventListener("touchmove", preventScroll, {passive: false});
       document.getElementById('scrollable').addEventListener('touchmove', stopPropagation);
-
+      document.body.addEventListener("touchstart", preventScroll, {passive: false});
       appHeight();
 //       document.addEventListener('touchstart', bubbleStop, {passive: false});
 //       document.addEventListener('touchmove', bubbleStop, {passive: false});
