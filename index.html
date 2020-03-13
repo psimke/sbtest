@@ -160,6 +160,9 @@ main div {
       document.body.addEventListener("touchmove", preventScroll, {passive: false});
       document.getElementById('scrollable').addEventListener('touchmove', stopPropagation);
       document.body.addEventListener("touchstart", preventScroll, {passive: false});
+      document.getElementsByTagName("footer")[0].addEventListener('touchstart', stopPropagation);
+      document.getElementsByTagName("footer")[0].addEventListener('touchmove', stopPropagation);
+      document.getElementsByTagName("footer")[0].addEventListener('click', stopPropagation);
       appHeight();
 //       document.addEventListener('touchstart', bubbleStop, {passive: false});
 //       document.addEventListener('touchmove', bubbleStop, {passive: false});
