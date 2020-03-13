@@ -6,6 +6,8 @@
   <title>IOS SCROLL</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/js-polyfills/0.1.42/polyfill.min.js" integrity="sha256-/XfEHUGimdIk42Vy7oTnNLtT8sVrO6vnhhnsQT1W1oo=" crossorigin="anonymous"></script>
   <style>
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
   html, body {
     position: fixed;
     padding: 0;
@@ -20,6 +22,7 @@
 .app-container {
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     overflow: hidden;
     height: 100%;
@@ -53,6 +56,7 @@ main {
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
     width: 100%;
     padding-top: 48px;
@@ -60,11 +64,13 @@ main {
     overflow: hidden;
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
+        -webkit-flex: 1 1 auto;
+            flex: 1 1 auto;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-flow: column;
-        flex-flow: column;
+        -webkit-flex-flow: column;
+            flex-flow: column;
   background-color: yellow;
   position:relative;
 }
