@@ -156,8 +156,8 @@ main div {
     }
   
     window.onload = function() {
-      document.addEventListener('touchend',appHeight);
-      document.addEventListener('keyup', appHeight);
+      document.addEventListener('touchend',appHeight, {passive: false});
+      document.addEventListener('keyup', appHeight, {passive: false});
       
       window.addEventListener('resize', appHeight);
       
