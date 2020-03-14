@@ -159,16 +159,16 @@ main div {
       document.addEventListener('touchend',appHeight, {passive: false});
       document.addEventListener('keyup', appHeight, {passive: false});
       
-      window.addEventListener('resize', appHeight);
+      window.addEventListener('resize', appHeight, {passive: false});
       
       document.getElementById('inputBox').addEventListener('blur', appHeight);
       
       document.body.addEventListener("touchmove", preventScroll, {passive: false});
-      document.getElementById('scrollable').addEventListener('touchmove', stopPropagation);
+      document.getElementById('scrollable').addEventListener('touchmove', stopPropagation, {passive: false});
       document.body.addEventListener("touchstart", preventScroll, {passive: false});
-      document.getElementsByTagName("footer")[0].addEventListener('touchstart', stopPropagation);
-      document.getElementsByTagName("footer")[0].addEventListener('touchmove', stopPropagation);
-      document.getElementsByTagName("footer")[0].addEventListener('click', stopPropagation);
+      document.getElementsByTagName("footer")[0].addEventListener('touchstart', stopPropagation, {passive: false});
+      document.getElementsByTagName("footer")[0].addEventListener('touchmove', stopPropagation, {passive: false});
+      document.getElementsByTagName("footer")[0].addEventListener('click', stopPropagation, {passive: false});
       appHeight();
 //       document.addEventListener('touchstart', bubbleStop, {passive: false});
 //       document.addEventListener('touchmove', bubbleStop, {passive: false});
