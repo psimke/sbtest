@@ -131,16 +131,20 @@ main div {
 <script>
     var _timeoutSet;
     var _initialViewPort;
+    var _htmlEl = document.getElementsByTagName('html')[0];
+    var _bodyEl = document.getElementsByTagName('body')[0];
     function timeoutRun() {
         //window.scrollTo(0,0);
         //document.body.scrollTo(0,0);
 //         document.getElementById('spanStats').innerHTML = window.innerHeight + ' || ' + window.visualViewport.height;
-        document.getElementsByTagName('html')[0].style.height = (document.body.getBoundingClientRect().height - Math.abs(document.body.getBoundingClientRect().top)) + "px";
-        document.getElementsByTagName('body')[0].style.height = (document.body.getBoundingClientRect().height - Math.abs(document.body.getBoundingClientRect().top)) + "px";
+        _htmlEl.style.height = (document.body.getBoundingClientRect().height - Math.abs(document.body.getBoundingClientRect().top)) + "px";
+        _bodyEl.style.height = (document.body.getBoundingClientRect().height - Math.abs(document.body.getBoundingClientRect().top)) + "px";
     }
     function appHeight() {
         //window.scrollTo(0,0);
         //document.body.scrollTo(0,0);
+        _htmlEl.style.height = 'auto';
+        _bodyEl.style.height = 'auto';
         if (_timeoutSet) { clearTimeout(_timeoutSet); }
 
         _timeoutSet = setTimeout(timeoutRun, 320);
