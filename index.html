@@ -18,6 +18,8 @@
     display: contents;
 }
     
+    body { display: block; }
+    
     
 .app-container {
     display: -webkit-box;
@@ -173,7 +175,7 @@ main div {
       document.getElementsByTagName("footer")[0].addEventListener('click', stopPropagation, {passive: false});
       //appHeight();
       
-      _initialViewPort = document.body.getBoundingClientRect().height;//window.visualViewport.height;
+      _initialViewPort = window.innerHeight;//window.visualViewport.height;
 //       document.addEventListener('touchstart', bubbleStop, {passive: false});
 //       document.addEventListener('touchmove', bubbleStop, {passive: false});
 //       document.addEventListener('touchend', bubbleStop, {passive: false});
