@@ -128,7 +128,7 @@ main div {
 
 <script>
     var _timeoutSet;
-    var _initialViewPort = document.body.getBoundingClientRect().height;//window.visualViewport.height;
+    var _initialViewPort;
     function timeoutRun() {
         window.scrollTo(0,0);
         document.body.scrollTo(0,0);
@@ -172,6 +172,8 @@ main div {
       document.getElementsByTagName("footer")[0].addEventListener('touchmove', stopPropagation, {passive: false});
       document.getElementsByTagName("footer")[0].addEventListener('click', stopPropagation, {passive: false});
       //appHeight();
+      
+      _initialViewPort = document.body.getBoundingClientRect().height;//window.visualViewport.height;
 //       document.addEventListener('touchstart', bubbleStop, {passive: false});
 //       document.addEventListener('touchmove', bubbleStop, {passive: false});
 //       document.addEventListener('touchend', bubbleStop, {passive: false});
