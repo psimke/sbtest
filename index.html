@@ -143,8 +143,8 @@ main div {
     function appHeight() {
         //window.scrollTo(0,0);
         //document.body.scrollTo(0,0);
-        _htmlEl.style.height = 'auto';
-        _bodyEl.style.height = 'auto';
+        _htmlEl.style.height = '100%';
+        _bodyEl.style.height = '100%';
         if (_timeoutSet) { clearTimeout(_timeoutSet); }
 
         _timeoutSet = setTimeout(timeoutRun, 320);
