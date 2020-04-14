@@ -132,15 +132,15 @@ main div {
     var _timeoutSet;
     var _initialViewPort;
     function timeoutRun() {
-        window.scrollTo(0,0);
-        document.body.scrollTo(0,0);
+        //window.scrollTo(0,0);
+        //document.body.scrollTo(0,0);
 //         document.getElementById('spanStats').innerHTML = window.innerHeight + ' || ' + window.visualViewport.height;
         document.getElementsByTagName('html')[0].style.height = (document.body.getBoundingClientRect().height - document.body.getBoundingClientRect().top) + "px";
         document.getElementsByTagName('body')[0].style.height = (document.body.getBoundingClientRect().height - document.body.getBoundingClientRect().top) + "px";
     }
     function appHeight() {
-        window.scrollTo(0,0);
-        document.body.scrollTo(0,0);
+        //window.scrollTo(0,0);
+        //document.body.scrollTo(0,0);
         if (_timeoutSet) { clearTimeout(_timeoutSet); }
 
         _timeoutSet = setTimeout(timeoutRun, 320);
@@ -149,8 +149,8 @@ main div {
     }
 
     function preventScroll(e) {
-        window.scrollTo(0,0);
-        document.body.scrollTo(0,0);
+        //window.scrollTo(0,0);
+        //document.body.scrollTo(0,0);
         e.preventDefault();
         e.stopPropagation();
     }
