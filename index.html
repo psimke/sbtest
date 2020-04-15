@@ -148,8 +148,8 @@ main div {
         if (_timeoutSet) { clearTimeout(_timeoutSet); }
 
         _timeoutSet = setTimeout(timeoutRun, 320);
-//         document.getElementsByTagName('html')[0].style.bottom = 0;
-//         document.getElementsByTagName('body')[0].style.bottom = 0;
+        _htmlEl.style.bottom = 0;
+        _bodyEl.style.bottom = 0;
     }
 
     function preventScroll(e) {
