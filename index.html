@@ -95,11 +95,11 @@ main div {
   
 </head>
 <body>
-  <div class='app-container'>
-  <header>
+  <div class='app-container overlay'>
+  <header class="overlay">
     Fixed Header <input type="text"/>
   </header>
-  <main >
+  <main class="overlay">
     <div id="scrollable">
       
     <p>
@@ -122,7 +122,7 @@ main div {
     </p>  
       </div>
   </main>
-  <footer>
+  <footer class="overlay">
     <input id="inputBox" type="text"/>   
     <span id="spanStats"></span>
   </footer>
@@ -163,7 +163,14 @@ main div {
         e.stopPropagation();
     }
   
-//     window.onload = function() {
+     window.onload = function() {
+        document.querySelectorAll('.overlay')].forEach(overlay => 
+          overlay.addEventListener('touchmove', event => {
+            event.preventDefault();
+          })
+        );
+    }                                                                                                                                          
+                                                                                                                                          
 //       document.addEventListener('touchend',appHeight, {passive: false});
 //       document.addEventListener('keyup', appHeight, {passive: false});
       
