@@ -99,7 +99,7 @@ main div {
   <header class="overlay">
     Fixed Header <input type="text"/>
   </header>
-  <main class="overlay">
+  <main class="">
     <div id="scrollable">
       
     <p>
@@ -163,12 +163,32 @@ main div {
         e.stopPropagation();
     }
   
+    function  getInnerHeight() {
+      return window.visualViewport && window.visualViewport.height ? window.visualViewport.height: window.innerHeight;
+    }
+  
+    var defaultHeight = document.body.getBoundingClientRect().height;
+    var defaultHViewport =  getInnerHeight();
+    function checkDifference() {
+      if (defaultHeight != document.body.getBoundingClientRect().height) {
+        defaultHeight = document.body.getBoundingClientRect().height;
+        console.log('changed h ', defaultHeight);
+      }
+      
+      if ( defaultHViewport != getInnerHeight()) {
+          defaultHViewport =  getInnerHeight();
+          console.log('changed vh ', defaultHViewport);
+      }
+    }
+  
      window.onload = function() {
         document.querySelectorAll('.overlay').forEach(overlay => 
           overlay.addEventListener('touchmove', event => {
             event.preventDefault();
           })
         );
+       
+       setInterval(checkDifference, 300);
     }                                                                                                                                          
                                                                                                                                           
 //       document.addEventListener('touchend',appHeight, {passive: false});
