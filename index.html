@@ -187,9 +187,11 @@ main div {
        document.getElementById('inputBox').focus();
     }
   
-    document.getElementById('buttonLoose').click(clickRefocus);
+   
   
      window.onload = function() {
+        document.getElementById('buttonLoose').click(clickReFocus);
+       
         document.querySelectorAll('.overlay').forEach(overlay => 
           overlay.addEventListener('touchmove', event => {
             event.preventDefault();
