@@ -95,7 +95,7 @@ main div {
   
 </head>
 <body>
-  <div class='app-container overlay'>
+  <div class='app-container'>
   <header class="overlay">
     Fixed Header <input type="text"/>
   </header>
@@ -124,7 +124,9 @@ main div {
   </main>
   <footer class="overlay">
     <input id="inputBox" type="text"/>   
-    <span id="spanStats"></span>
+    <span id="spanStats">
+      <button id="buttonLoose" type="button">TestFocusLoose</button>
+    </span>
   </footer>
   </div>
 
@@ -180,6 +182,12 @@ main div {
           console.log('changed vh ', defaultHViewport);
       }
     }
+  
+    function clickReFocus() {
+       document.getElementById('inputBox').focus();
+    }
+  
+    document.getElementById('buttonLoose').click(clickRefocus);
   
      window.onload = function() {
         document.querySelectorAll('.overlay').forEach(overlay => 
