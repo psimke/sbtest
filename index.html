@@ -190,7 +190,7 @@ main div {
    
   
      window.onload = function() {
-        document.getElementById('buttonLoose').click(clickReFocus);
+        document.getElementById('buttonLoose').addEventListener('click', clickReFocus);
        
         document.querySelectorAll('.overlay').forEach(overlay => 
           overlay.addEventListener('touchmove', event => {
